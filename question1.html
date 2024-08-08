@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>Question!</title>
+  <style>
+  #ponto {
+    position: absolute;
+    margin-top: 120%;
+    margin-left: 30%;
+    
+  }
+  #q1 {
+    border: 1px solid black;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    float: left;
+  }
+  #q2 {
+    border: 1px solid black;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    float: left;
+  }
+  #q3 {
+    border: 1px solid black;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    float: left;
+  }
+  #q4 {
+    border: 1px solid black;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    float: left;
+  }
+  #q5 {
+    border: 1px solid black;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    float: left;
+  }
+   #titulo {
+      position: absolute;
+      z-index: 1;
+      margin-left: 0%;
+      margin-right: 16%;
+      width: 150px;
+      right: 40px;
+    }
+    #sub {
+       position: absolute;
+      z-index: 2;
+      margin-top: 10%;
+      margin-left: 30%;;
+      margin-right: 20%;
+      
+    }
+   #quest1 {
+      position: absolute;
+      background-color: white;
+      margin-top: 40%;
+      margin-left: 15%;
+      margin-right: 15%;
+      font-size: 22px;
+      text-align: center;
+      border: 5px solid  rgba(130, 200, 130, 0.9);
+      border-left: 1px solid rgba(130, 200, 130, 0.9);
+      border-top: 1px solid rgba(130, 200, 130, 0.9);
+      border-radius: 5%;
+      width: 300px;
+      height: 310px;
+      animation: move1 3s  alternate infinite;
+      
+    }
+  #img{
+   text-align: center;
+   font-size: 30px;
+    margin-top: 40%;
+    margin-left: 15%;
+    margin-right: 15%;
+   border-radius: 5%;
+   border: 5px solid  rgba(130, 200, 130, 0.9);
+      border-left: 1px solid rgba(130, 200, 130, 0.9);
+      border-top: 1px solid rgba(130, 200, 130, 0.9);
+    width: 300px;
+    height: 310px;
+    animation: ani 1s;
+    background-image: url("1000054006.jpg");
+    background-repeat: no-repeat;
+   background-size: 300px 310px;
+ }
+  
+   #img2{
+   text-align: center;
+   font-size: 30px;
+    margin-top: 40%;
+    margin-left: 15%;
+    margin-right: 15%;
+   border-radius: 5%;
+   border: 5px solid  rgba(130, 200, 130, 0.9);
+      border-left: 1px solid rgba(130, 200, 130, 0.9);
+      border-top: 1px solid rgba(130, 200, 130, 0.9);
+    width: 300px;
+    height: 310px;
+     animation: ani, move1 1s alternate infinite;
+    background-image: url("1000054135 (1).jpg");
+    background-repeat: no-repeat;
+   
+ }
+  @keyframes ani {
+    0% {background-image: url("1000054008.jpg");
+    }
+             
+    100% {background-image: url("1000054006.jpg" );
+    }
+  }
+  @keyframes move1 {
+    from {
+      border: 5px solid  rgba(130, 200, 130, 0.9);
+      border-left: 1px solid rgba(130, 200, 130, 0.9);
+      border-top: 1px solid rgba(130, 200, 130, 0.9);
+    }
+    to {
+      border: 5px solid  rgba(130, 200, 130, 0.9);
+      border-right: 1px solid rgba(130, 200, 130, 0.9);
+      border-top: 1px solid rgba(130, 200, 130, 0.9);
+    }
+  }
+  </style>
+</head>
+<body>
+    <p id="teste2"></p>
+  <p id="teste"></p>
+  <div id="titulo">
+    <h1>Desafio!</h1>
+  </div>
+  <div id="sub">
+    <p>Teste seu conhecimento.</p>
+  </div>
+  <div id="quest1">
+    <p>1. Qual das alternativas a seguir não é um Equipamento de Proteção Individual (EPI)?</p>
+    <form>
+      <label>1- Óculos de Proteção.</label><br>
+      <label>2- Luvas.</label><br>
+      <label>3-Uniforme.</label><br>
+      <label>4- Máscara Respiratória..</label><br>
+      <label>5- Protetor Auditivo.</label><br>
+      <input  id="op" > 
+    </form>
+    <button id="conferir" onclick="certo1()">CONFERIR</button> 
+  </div>
+  <div id="ponto">
+    <p id="q1"></p>
+    <p id="q2"></p>
+    <p id="q3"></p>
+    <p id="q4"></p>
+    <p id="q5"></p>
+  </div>
+</body>
+ <script type="module" src="log.js"></script>
+ <script>
+   
+   function certo1(a, resposta1, resposta2) { 
+      a = document.querySelector("#op").value;
+     resposta1 = "Uniforme ";
+     resposta2 = "Uniforme"
+    if (a == resposta1 || a == resposta2) {
+      
+     const valor = Number(localStorage.getItem('certo'));
+      const valorA = valor+1;
+      localStorage.setItem('certo', JSON.stringify(valorA));
+      
+       document.querySelector("body").innerHTML = '<p id="img">PARABÉNS!</p>';
+    setTimeout( function() {
+      window.location.assign("question2.html");}, 3000);
+         
+      }
+    else {
+      document.querySelector("body").innerHTML = '<p id="img2">Errado.</p>';
+    setTimeout( function() {
+      window.location.assign("question2.html");}, 3000);
+      }
+    }
+  </script>
+</html>

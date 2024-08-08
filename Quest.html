@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>Question!</title>
+  <style>
+    #titulo {
+      position: absolute;
+      z-index: 1;
+      margin-left: 0%;
+      margin-right: 16%;
+      width: 150px;
+      right: 40px;
+    }
+    #sub {
+       position: absolute;
+      z-index: 2;
+      margin-top: 10%;
+      margin-left: 30%;
+      margin-right: 20%;
+      
+    }
+    #apres {
+      position: absolute;
+      z-index: 2;
+      background-color: white;
+      margin-top: 40%;
+      margin-left: 15%;
+      margin-right: 15%;
+      font-size: 30px;
+      text-align: center;
+      border: 5px solid  rgba(130, 200, 130, 0.9);
+      border-left: 1px solid rgba(130, 200, 130, 0.9);
+      border-top: 1px solid rgba(130, 200, 130, 0.9);
+      border-radius: 5%;
+      width: 300px;
+      height: 300px;
+      animation: move1 3s  alternate infinite;
+      
+    }
+    form {
+      text-align: justify;
+    }
+  
+   
+   #quest2 {
+      position: absolute;
+      background-color: white;
+      margin-top: 40%;
+      margin-left: 15%;
+      margin-right: 15%;
+      font-size: 22px;
+      text-align: center;
+      border: 5px solid  rgba(130, 200, 130, 0.9);
+      border-left: 1px solid rgba(130, 200, 130, 0.9);
+      border-top: 1px solid rgba(130, 200, 130, 0.9);
+      border-radius: 5%;
+      width: 300px;
+      height: 300px;
+      animation: move1 3s  alternate infinite;
+      
+    }
+  #op {
+    margin-left: 50px;
+  }
+ #img{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 40%;
+    margin-left: 15%;
+    margin-right: 15%;
+    border-radius: 5%;
+    border: 5px solid  rgba(130, 200, 130, 0.9);
+    border-left: 1px solid rgba(130, 200, 130, 0.9);
+    border-top: 1px solid rgba(130, 200, 130, 0.9);
+    width: 300px;
+    height: 310px;
+    animation: ani  1s;
+    background-image: url("1000054006.jpg");
+    background-repeat: no-repeat;
+   background-size: 300px 310px;
+ }
+  @keyframes ani {
+    0% {background-image: url("1000054008.jpg");
+    }
+             
+    100% {background-image: url("1000054006.jpg" );
+    }
+  }
+  @keyframes move1 {
+    from {
+      border: 5px solid  rgba(130, 200, 130, 0.9);
+      border-left: 1px solid rgba(130, 200, 130, 0.9);
+      border-top: 1px solid rgba(130, 200, 130, 0.9);
+    }
+    to {
+      border: 5px solid  rgba(130, 200, 130, 0.9);
+      border-right: 1px solid rgba(130, 200, 130, 0.9);
+      border-top: 1px solid rgba(130, 200, 130, 0.9);
+    }
+  }
+  </style>
+</head>
+<body>
+  <p id="teste2"></p>
+  <p id="teste"></p>
+  <div id="titulo">
+    <h1>Desafio.</h1>
+  </div>
+  <div id="sub">
+    <p>Teste seu conhecimento.</p>
+  </div>
+  <div id="apres">
+    <p>Bem vindo. A seguir testaremos seu conhecimento. Esta pronto?</p>
+    <button onclick="iniciar()">COMEÇAR</button> 
+   
+  </div>
+  
+   
+</body>
+ <script  type="module" src="log.js"> </script>
+ <script>
+   localStorage.clear();
+   localStorage.setItem('certo', '0');
+   localStorage.setItem('errado', '0');
+     function iniciar() {
+    document.querySelector("body").innerHTML = '<p id="img">VAMOS LÁ!</p>';
+    setTimeout( function() {
+      window.location.assign("question1.html");}, 2000);
+  }
+   </script>
+</html>
