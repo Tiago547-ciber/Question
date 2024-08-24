@@ -1,1 +1,0 @@
-Este site foi criado para exercitar conhecimento em HTML e CSS. É um quizz sobre segurança do trabalho. Basta iniciar o arquivo busca.html que ao responder corretamente, sera encaminhado a proxima pagina. Como esta pagina foi criada usando um aplicativo de celular, recomendo testar este site apenas em dispositivos moveis.
